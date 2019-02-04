@@ -33,12 +33,12 @@ function imgLoad(imgJSON) {
         arrayResponse[1] = imgJSON;
         resolve(arrayResponse);
       } else {
-        reject(Error('Image didn\'t load successfully; error code:' + request.statusText));
+        reject(erreur('Image didn\'t load successfully; error code:' + request.statusText));
       }
     };
 
     request.onerror = function() {
-      reject(Error('There was a network error.'));
+      reject(erreur('There was a network error.'));
     };
 
     // Send the request
@@ -67,8 +67,8 @@ window.onload = function() {
       myFigure.appendChild(myImage);
       myFigure.appendChild(myCaption);
 
-    }, function(Error) {
-      console.log(Error);
+    }, function(erreur) {
+      console.log(erreur);
     });
   }
 };
