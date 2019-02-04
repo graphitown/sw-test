@@ -67,8 +67,9 @@ window.onload = function() {
       myFigure.appendChild(myImage);
       myFigure.appendChild(myCaption);
 
-    }, function(Error) {
-      console.log(Error);
-    });
-  }
+   }).catch(function(error) {
+    // registration failed
+    console.log('Registration failed with ' + error);
+  });
+}
 };
